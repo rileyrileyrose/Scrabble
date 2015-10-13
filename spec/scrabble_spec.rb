@@ -1,9 +1,7 @@
 require "./lib/scrabble_class.rb"
 
 describe Scrabble do
-  before :each do
-    @word = Scrabble.new
-  end
+
   describe  "word_value"
    it "empty word do nothing"
    expect (@word).to
@@ -14,4 +12,23 @@ describe Scrabble do
     it "return the value"
 
   end
+
+  describe ".highest_score_from"
+    it 'converts each string in array to score value' do
+
+    end
+    it 'finds highest score value(s)' do
+
+    end
+    it 'chooses shortest word in tie' do
+
+    end
+    it 'applies bonus to seven letter word' do
+
+    end
+    it 'chooses first word in a same-length tie' do
+
+    end
+  end
+
 end
