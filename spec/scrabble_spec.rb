@@ -1,4 +1,4 @@
-require "./scrabble_class.rb"
+require "./lib/scrabble_class.rb"
 
 describe Scrabble do
   before :each do
