@@ -9,7 +9,24 @@ module Scrabble
       # if multiple words are same, choose first in list
     end
 
+    def letter_value(letter)
+      case letter
+        when "e", "a", "i", "o", "u", "l", "n", "r", "s", "t"
+          return 1
+        when "d", "g"
+          return 2
+        when "b", "c", "m", "p"
+          return 3
+        when "f", "h", "v", "w", "y"
+          return 4
+        when "k"
+          return 5
+        when "j", "x"
+          return 8
+        when "q", "z"
+          return 10
+      end
 
+    end
   end
-
 end
