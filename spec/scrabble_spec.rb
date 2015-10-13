@@ -16,7 +16,7 @@ describe Scrabble do
   describe ".highest_score_from"
     it 'finds highest score value(s)' do
       @word_array = [one, two, three, four, five, six, seven]
-      expect(Scrabble.)
+      expect(Scrabble.highest_score_from(@word_array).to )
     end
     it 'chooses shortest word in tie' do
 
