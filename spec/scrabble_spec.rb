@@ -2,20 +2,20 @@ require "./lib/scrabble_class.rb"
 
 describe Scrabble do
 
-  describe  "word_value"
+  describe  "word_value" do
    it "empty word do nothing" do
    expect (@word).to be_a(String)
     end
   end
 
   describe "score" do
-    it "return a score 9 for the word 'apple'"
+    it "return a score 9 for the word 'apple'" do
       expect Scrabble.score("apple").to equal 9
     end
-    it "return an error if gets nothing" #change to error ?
+    it "return an error if gets nothing" do #change to error ?
       expect Scrabble.score(nil).to raise_error(ArgumentError)
     end
-    it "return error when it's not a letter"
+    it "return error when it's not a letter" do
       expect Scrabble.score(9).to raise_error(ArgumentError) # check
     end
   end
@@ -42,26 +42,25 @@ describe Scrabble do
     it "return the value of the letter 'Q'" do
       expect Scrabble.letter_value("q").to equal 10
     end
-
   end
-
-  describe ".highest_score_from"
-    it 'only includes strings' do
-
-    end
-    it 'finds highest score value(s)' do
-      @word_array = ["aaa", "bbb", "zzz"]
-      expect(Scrabble.highest_score_from(@word_array)).to eq("zzz")
-    end
-    it 'chooses shortest word in tie' do
-
-    end
-    it 'applies bonus to seven letter word' do
-
-    end
-    it 'chooses first word in a same-length tie' do
-
-    end
-  end
+  #
+  # describe ".highest_score_from"
+  #   it 'only includes strings' do
+  #
+  #   end
+  #   it 'finds highest score value(s)' do
+  #     @word_array = ["aaa", "bbb", "zzz"]
+  #     expect(Scrabble.highest_score_from(@word_array)).to eq("zzz")
+  #   end
+  #   it 'chooses shortest word in tie' do
+  #
+  #   end
+  #   it 'applies bonus to seven letter word' do
+  #
+  #   end
+  #   it 'chooses first word in a same-length tie' do
+  #
+  #   end
+  # end
 
 end
