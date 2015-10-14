@@ -40,11 +40,11 @@ module Scrabble
             # 50 pt bonus for using all 7 tiles
             # if multiple words are same, choose first in list
     end
-    
+
     # returns the total score value for the given word.
     def self.score(word)
       if word == nil
-        puts "You need to write a word" #double check
+        raise ArgumentError.new("You need to write a word") #double check
       else
         word_array = word_value.split("")
         score = 0
@@ -52,7 +52,7 @@ module Scrabble
           if letter?(n) == 0 do
             score += letter_value(n)
           else
-            raise ArguemetError.new("You need to write only letters")
+            raise ArgumentError.new("You need to write only letters")
             break
           end
         return score
