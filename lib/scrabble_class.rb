@@ -49,7 +49,7 @@ module Scrabble
     # returns the total score value for the given word.
     def self.score(word)
       if word == nil
-        raise ArgumentError.new("You need to write a word") #double check
+        raise ArgumentError, "You need to write a word" #double check
       else
         word_array = word.split("")
         score = 0
@@ -57,7 +57,7 @@ module Scrabble
           if letter?(n) == 0
             score += letter_value(n)
           else
-            raise ArgumentError.new("You need to write only letters")
+            raise ArgumentError, "You need to write only letters"
             break
           end
         end

@@ -10,13 +10,13 @@ describe Scrabble do
 
   describe "score" do
     it "return a score 9 for the word 'apple'" do
-      expect Scrabble.score("apple").to equal 9
+      expect(Scrabble::Scrabble.score("apple")).to equal 9
     end
     it "return an error if gets nothing" do #change to error ?
-      expect Scrabble.score(nil).to raise_error(ArgumentError)
+      expect{Scrabble::Scrabble.score(nil)}.to raise_error(ArgumentError)
     end
     it "return error when it's not a letter" do
-      expect Scrabble.score(9).to raise_error(ArgumentError) # check
+      expect{Scrabble::Scrabble.score(9)}.to raise_error(ArgumentError) # check
     end
   end
 
