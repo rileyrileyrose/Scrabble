@@ -43,24 +43,25 @@ describe Scrabble do
       expect(Scrabble::Scrabble.letter_value("q")).to eq(10)
     end
   end
-  #
-  # describe ".highest_score_from"
-  #   it 'only includes strings' do
-  #
-  #   end
-  #   it 'finds highest score value(s)' do
-  #     @word_array = ["aaa", "bbb", "zzz"]
-  #     expect(Scrabble.highest_score_from(@word_array)).to eq("zzz")
-  #   end
-  #   it 'chooses shortest word in tie' do
-  #
-  #   end
-  #   it 'applies bonus to seven letter word' do
-  #
-  #   end
-  #   it 'chooses first word in a same-length tie' do
-  #
-  #   end
-  # end
+
+  describe ".highest_score_from" do
+    it 'only includes strings' do
+
+    end
+    it 'finds highest score value' do
+      @word_array = ["aaa", "bbb", "zzz"]
+      @high_score = Scrabble::Scrabble.highest_score_from(@word_array)
+      expect(@high_score).to eq("zzz")
+    end
+    it 'chooses shortest word in tie' do
+
+    end
+    it 'applies bonus to seven letter word' do
+
+    end
+    it 'chooses first word in a same-length tie' do
+
+    end
+  end
 
 end
