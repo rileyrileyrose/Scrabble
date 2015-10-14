@@ -28,30 +28,34 @@ module Scrabble
     def self.letter?(a)
         return a =~ /[[:alpha:]]/
     end
-
-    def self.add_points_for_seven_letter(hash)
-      hash.each do |score, word|
-        if word.length > 6
-          score +=50
+    #
+    def self.check_7_letters(word)
+        if word.length == 7
+          return true
         end
-      end
     end
 
 
     def self.highest_score_from(array_of_words)
-      #Make sure every word is a string
-      array_of_words = array_of_words.each {|word| word = word.to_s}
-      # Makes sure no elements of the array are nil
-      if array_of_words.include?(nil)
-        raise ArgumentError, "This array contains a nil value."
+      count = 0
+      max_score = 0
+      winning_word = ""
+      array_of_words.each do |word|
+        score = 0
+        score = 50 if check_7_letters(word)
+        score += self.score(word)
+        if score >= max_score
+          max_score = score
+            if word.length < winning_word.length
+              winning_word = word
+            end
+          winning_word = word
+        end
       end
-      # Find score of each word, put into hash
-    
-      # better to use fewer tiles
-      # 50 pt bonus for using all 7 tiles
-      # if multiple words are same, choose first in list
-
+      return winning_word
     end
+
+
 
     #returns the total score value for the given word.
     def self.score(word)
