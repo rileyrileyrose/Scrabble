@@ -25,7 +25,7 @@ module Scrabble
     end
 
     #check that it's actually a letter - 0 for letter, nil if not
-    def letter?(a)
+    def self.letter?(a)
         return a =~ /[[:alpha:]]/
     end
 
@@ -49,15 +49,15 @@ module Scrabble
     # returns the total score value for the given word.
     def self.score(word)
       if word == nil
-        raise ArgumentError.new("You need to write a word") #double check
+        raise ArgumentError, "You need to write a word" #double check
       else
-        word_array = word_value.split("")
+        word_array = word.split("")
         score = 0
         word_array.each do |n|
           if letter?(n) == 0
             score += letter_value(n)
           else
-            raise ArgumentError.new("You need to write only letters")
+            raise ArgumentError, "You need to write only letters"
             break
           end
         end
