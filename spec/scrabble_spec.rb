@@ -2,9 +2,25 @@ require "./lib/scrabble_class.rb"
 
 describe Scrabble do
 
+<<<<<<< HEAD
   describe  "word_value"
    it "empty word do nothing"
    expect (@word).to
+=======
+
+  describe  "score" do
+    it "return a score 9 for the word 'apple'"
+      expect score("apple").to equal 9
+    end
+    it "return a nil if gets nothing" #change to error ?
+      expect score().to be_nil
+    end
+    it "return nil when it's not a letter"
+      expect score(9).to be_nil
+    end
+  end
+
+>>>>>>> 4eaf6ce45fcdf662dce7240cd2d41981a81cc790
   describe "letter_value" do
     it "return the value of the letter 'A'" do
       expect letter_value("a").to equal 1
