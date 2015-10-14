@@ -43,15 +43,19 @@ module Scrabble
       array_of_words.each do |word|
         scores_hash[Scrabble.score(word)] = word
       end
+      # Sort through scores_hash and if value is a string with 7 letters, add 50 to the score (the key of the key/value pair)
       # Find high scores
       @high_scores = scores_hash.select{|s, w| s == scores_hash.keys.max}
-      # if @high_scores.length == 1
-      #   return @high_scores
-      # end
-      return @high_scores[scores_hash.keys.max]
+
+      # What to do with ties
+      if @high_scores.length != 1
+
+        return @high_scores
+      end
       # better to use fewer tiles
       # 50 pt bonus for using all 7 tiles
       # if multiple words are same, choose first in list
+      return @high_scores[scores_hash.keys.max]
     end
 
     #returns the total score value for the given word.
