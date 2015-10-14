@@ -48,8 +48,9 @@ module Scrabble
 
     # returns the total score value for the given word.
     def self.score(word)
+      #checks the word is actually a string.
       if (word == nil) || !(word.is_a? String)
-        raise ArgumentError, "You need to write a word" #double check
+        raise ArgumentError, "You need to write a word"
       else
         word_array = word.split("")
         score = 0
