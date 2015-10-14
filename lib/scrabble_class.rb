@@ -33,18 +33,22 @@ module Scrabble
     def self.highest_score_from(array_of_words)
       # returns the word in an array with the highest score
       scores_hash = {}
-      array_of _words = array_of_words.each {|word| word.to_s!}
-      if array_of_words.includes?(nil)
+      #Make sure every word is a string
+      array_of_words = array_of_words.each {|word| word = word.to_s}
+      # Makes sure no elements of the array are nil
+      if array_of_words.include?(nil)
         raise ArgumentError, "This array contains a nil value."
       end
+      # Find score of each word, put into hash
       array_of_words.each do |word|
-        scores_hash[word.score] = word
+        scores_hash[Scrabble.score(word)] = word
       end
-      @high_scores = {}
-      @high_scores[scores_hash.select {|s, w| w == scores_hash.keys.max}]
-      if @high_scores.length == 1
-        return @high_scores
-      end
+      # Find high scores
+      @high_scores = scores_hash.select{|s, w| s == scores_hash.keys.max}
+      # if @high_scores.length == 1
+      #   return @high_scores
+      # end
+      return @high_scores[scores_hash.keys.max]
       # better to use fewer tiles
       # 50 pt bonus for using all 7 tiles
       # if multiple words are same, choose first in list
