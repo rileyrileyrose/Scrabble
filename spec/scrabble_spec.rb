@@ -2,6 +2,11 @@ require "./lib/scrabble_class.rb"
 
 describe Scrabble do
 
+  describe  "word_value"
+   it "empty word do nothing"
+   expect (@word).to
+
+
   describe  "score" do
     it "return a score 9 for the word 'apple'"
       expect Scrabble.score("apple").to equal 9
@@ -40,9 +45,12 @@ describe Scrabble do
   end
 
   describe ".highest_score_from"
+    it 'only includes strings' do
+
+    end
     it 'finds highest score value(s)' do
-      @word_array = [one, two, three, four, five, six, seven]
-      expect(Scrabble.highest_score_from(@word_array).to )
+      @word_array = ["aaa", "bbb", "zzz"]
+      expect(Scrabble.highest_score_from(@word_array)).to eq("zzz")
     end
     it 'chooses shortest word in tie' do
 
