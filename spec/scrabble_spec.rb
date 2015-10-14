@@ -1,6 +1,6 @@
-require "./lib/scrabble_class.rb"
+ require "./lib/scrabble_class.rb"
 
-describe Scrabble do
+describe Scrabble::Scrabble do
 
   describe  "letter?" do
    it "returns nil input is not a letter" do
