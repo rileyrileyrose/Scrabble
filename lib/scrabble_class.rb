@@ -29,6 +29,14 @@ module Scrabble
         return a =~ /[[:alpha:]]/
     end
 
+    def self.add_points_for_seven_letter(hash)
+      hash.each do |score, word|
+        if word.length > 6
+          score +=50
+        end
+      end
+    end
+
 
     def self.highest_score_from(array_of_words)
       # returns the word in an array with the highest score
