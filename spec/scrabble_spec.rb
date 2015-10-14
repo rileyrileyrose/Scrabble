@@ -20,14 +20,6 @@ describe Scrabble do
     end
   end
 
-  describe "add_points_for_seven_letter" do
-    it "add 50 points to a 7 letters word" do
-    @hash = {10 => "aaaaaaa"}
-    Scrabble::Scrabble.add_points_for_seven_letter(@hash)
-    expect(@hash.key = 60)
-    end
-  end
-
 
   describe "letter_value" do
     it "return the value of the letter 'A'" do
@@ -64,9 +56,9 @@ describe Scrabble do
       expect(high_score).to eq("zzz")
     end
     it 'chooses shortest word in tie' do
-      word_array = ["aaa", "zzkka", "zzza"]
+      word_array = ["aaa", "zzkk", "zzz"]
       high_score = Scrabble::Scrabble.highest_score_from(word_array)
-      expect(high_score).to eq("zzza")
+      expect(high_score).to eq("zzz")
     end
     it 'applies bonus to seven letter word' do
 
