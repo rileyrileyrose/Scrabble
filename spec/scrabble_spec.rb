@@ -20,6 +20,15 @@ describe Scrabble do
     end
   end
 
+  describe "add_points_for_seven_letter" do
+    it "add 50 points to a 7 letters word" do
+    @hash = {10 => "aaaaaaa"}
+    Scrabble::Scrabble.add_points_for_seven_letter(@hash)
+    expect(@hash.key = 60)
+    end
+  end
+
+
   describe "letter_value" do
     it "return the value of the letter 'A'" do
       expect(Scrabble::Scrabble.letter_value("a")).to eq(1)
