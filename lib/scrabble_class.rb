@@ -4,17 +4,6 @@ module Scrabble
 
   class Scrabble
 
-    def self.highest_score_from(array_of_words)
-      # returns the word in an array with the highest score
-
-      array_of_scores = array_of_words.map |word| do
-        word.score
-      end
-      # better to use fewer tiles
-      # 50 pt bonus for using all 7 tiles
-      # if multiple words are same, choose first in list
-    end
-
     def letter_value(letter)
       case letter
         when "e", "a", "i", "o", "u", "l", "n", "r", "s", "t"
@@ -31,6 +20,18 @@ module Scrabble
           return 8
         when "q", "z"
           return 10
+      end
+
+
+      def self.highest_score_from(array_of_words)
+            # returns the word in an array with the highest score
+
+        array_of_scores = array_of_words.map |word| do
+          word.score
+        end
+            # better to use fewer tiles
+            # 50 pt bonus for using all 7 tiles
+            # if multiple words are same, choose first in list
       end
 
     end
