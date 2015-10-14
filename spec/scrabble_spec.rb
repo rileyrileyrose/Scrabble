@@ -22,25 +22,25 @@ describe Scrabble do
 
   describe "letter_value" do
     it "return the value of the letter 'A'" do
-      expect Scrabble.letter_value("a").to equal 1
+      expect(Scrabble::Scrabble.letter_value("a")).to eq(1)
     end
     it "return the value of the letter 'D'" do
-      expect Scrabble.letter_value("d").to equal 2
+      expect(Scrabble::Scrabble.letter_value("d")).to eq(2)
     end
     it "return the value of the letter 'B'" do
-      expect Scrabble.letter_value("b").to equal 3
+      expect(Scrabble::Scrabble.letter_value("b")).to eq(3)
     end
     it "return the value of the letter 'F'" do
-      expect Scrabble.letter_value("f").to equal 4
+      expect(Scrabble::Scrabble.letter_value("f")).to eq(4)
     end
     it "return the value of the letter 'K'" do
-      expect Scrabble.letter_value("k").to equal 5
+      expect(Scrabble::Scrabble.letter_value("k")).to eq(5)
     end
     it "return the value of the letter 'J'" do
-      expect Scrabble.letter_value("j").to equal 8
+      expect(Scrabble::Scrabble.letter_value("j")).to eq(8)
     end
     it "return the value of the letter 'Q'" do
-      expect Scrabble.letter_value("q").to equal 10
+      expect(Scrabble::Scrabble.letter_value("q")).to eq(10)
     end
   end
   #
