@@ -4,7 +4,7 @@ describe Scrabble do
 
   describe  "word_value"
    it "empty word do nothing" do
-   expect (@word).to
+   expect (@word).to be_a_string
     end
   end
 

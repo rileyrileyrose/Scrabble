@@ -39,12 +39,13 @@ module Scrabble
       array_of_words.each |word| do
         array_of_scores.push(word.score)
       end
-      @high_score = array_of_scores.max
+      @high_scores = array_of_scores.find_all(array_of_scores.max)
+      if @high_scores.length 
       # better to use fewer tiles
       # 50 pt bonus for using all 7 tiles
       # if multiple words are same, choose first in list
     end
-    
+
     # returns the total score value for the given word.
     def self.score(word)
       if word == nil
