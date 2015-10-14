@@ -7,15 +7,15 @@ describe Scrabble do
    expect (@word).to
 
 
-  describe  "score" do
+  describe "score" do
     it "return a score 9 for the word 'apple'"
       expect Scrabble.score("apple").to equal 9
     end
     it "return an error if gets nothing" #change to error ?
-      expect Scrabble.score().to be_nil
+      expect Scrabble.score(nil).to raise_error(ArgumentError)
     end
     it "return error when it's not a letter"
-      expect Scrabble.score(9).to be_ArguemetError # or nil?
+      expect Scrabble.score(9).to raise_error(ArgumentError) # check
     end
   end
 
