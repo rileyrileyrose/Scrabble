@@ -45,16 +45,19 @@ describe Scrabble do
   end
 
   describe ".highest_score_from" do
+
     it 'only includes strings' do
 
     end
     it 'finds highest score value' do
-      @word_array = ["aaa", "bbb", "zzz"]
-      @high_score = Scrabble::Scrabble.highest_score_from(@word_array)
-      expect(@high_score).to eq("zzz")
+      word_array = ["aaa", "bbb", "zzz"]
+      high_score = Scrabble::Scrabble.highest_score_from(word_array)
+      expect(high_score).to eq("zzz")
     end
     it 'chooses shortest word in tie' do
-
+      word_array = ["aaa", "zzjx", "zzz"]
+      high_score = Scrabble::Scrabble.highest_score_from(word_array)
+      expect(high_score).to eq("zzz")
     end
     it 'applies bonus to seven letter word' do
 
