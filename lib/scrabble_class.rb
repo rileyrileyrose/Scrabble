@@ -35,20 +35,26 @@ module Scrabble
         end
     end
 
+    def self.are_strings?(array)
+      array.each do |word|
+        if word.is_a?(String) != true
+          raise ArgumentError, "This array contains objects that are not strings"
+        end
+      end
+    end
 
     def self.highest_score_from(array_of_words)
-      count = 0
+      are_strings?(array_of_words)
       max_score = 0
       winning_word = ""
       array_of_words.each do |word|
         score = 0
         score = 50 if check_7_letters(word)
         score += self.score(word)
-        if score >= max_score
-          max_score = score
-            if word.length < winning_word.length
-              winning_word = word
-            end
+        if score == max_score
+            winning_word = word if word.length < winning_word.length && !check_7_letters(winning_word)
+        elsif score > max_score
+            max_score = score
           winning_word = word
         end
       end
