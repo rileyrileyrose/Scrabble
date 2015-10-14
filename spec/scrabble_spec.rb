@@ -48,7 +48,8 @@ describe Scrabble do
   describe ".highest_score_from" do
 
     it 'only includes strings' do
-
+      word_array = ["aaa", "bbb", "zzz", 9]
+      expect{Scrabble::Scrabble.highest_score_from(word_array)}.to raise_error(ArgumentError)
     end
     it 'finds highest score value' do
       word_array = ["aaa", "bbb", "zzz"]
@@ -61,10 +62,19 @@ describe Scrabble do
       expect(high_score).to eq("zzz")
     end
     it 'applies bonus to seven letter word' do
-
+      word_array = ["aaaaaaa", "zzkk", "zzz"]
+      high_score = Scrabble::Scrabble.highest_score_from(word_array)
+      expect(high_score).to eq("aaaaaaa")
     end
     it 'chooses first word in a same-length tie' do
-
+      word_array = ["aaaa", "qqq", "zzz"]
+      high_score = Scrabble::Scrabble.highest_score_from(word_array)
+      expect(high_score).to eq("qqq")
+    end
+    it 'in a tie seven letter word wins' do
+      word_array = ["aaaaaaa", "fk", "zzz"]
+      high_score = Scrabble::Scrabble.highest_score_from(word_array)
+      expect(high_score).to eq("aaaaaaa")
     end
   end
 
