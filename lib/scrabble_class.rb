@@ -48,7 +48,7 @@ module Scrabble
 
     # returns the total score value for the given word.
     def self.score(word)
-      if word == nil
+      if (word == nil) || !(word.is_a? String)
         raise ArgumentError, "You need to write a word" #double check
       else
         word_array = word.split("")
