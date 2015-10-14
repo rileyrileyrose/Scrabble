@@ -26,19 +26,23 @@ module Scrabble
 
     #check that it's actually a letter - 0 for letter, nil if not
     def letter?(lookAhead)
-        reutrn lookAhead =~ /[[:alpha:]]/
+        return lookAhead =~ /[[:alpha:]]/
     end
 
 
     def self.highest_score_from(array_of_words)
-            # returns the word in an array with the highest score
-
-      array_of_scores = array_of_words.map |word| do
-          word.score
+      # returns the word in an array with the highest score
+      array_of_scores = []
+      array_of _words = array_of_words.each {|word| word.to_s}
+      if array_of_words.includes?(nil)
+        raise ArgumentError, "This array contains a nil value."
+      array_of_words.each |word| do
+        array_of_scores.push(word.score)
       end
-            # better to use fewer tiles
-            # 50 pt bonus for using all 7 tiles
-            # if multiple words are same, choose first in list
+      @high_score = array_of_scores.max
+      # better to use fewer tiles
+      # 50 pt bonus for using all 7 tiles
+      # if multiple words are same, choose first in list
     end
 
     def self.score(word)

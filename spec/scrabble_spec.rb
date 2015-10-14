@@ -3,9 +3,10 @@ require "./lib/scrabble_class.rb"
 describe Scrabble do
 
   describe  "word_value"
-   it "empty word do nothing"
+   it "empty word do nothing" do
    expect (@word).to
-
+    end
+  end
 
   describe  "score" do
     it "return a score 9 for the word 'apple'"
