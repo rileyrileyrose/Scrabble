@@ -2,9 +2,9 @@ require "./lib/scrabble_class.rb"
 
 describe Scrabble do
 
-  describe  "word_value" do
-   it "empty word do nothing" do
-   expect (@word).to be_a(String)
+  describe  "letter?" do
+   it "returns nil input is not a letter" do
+   expect(Scrabble::Scrabble.letter?(9)).to eq nil
     end
   end
 
