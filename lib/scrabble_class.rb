@@ -29,24 +29,28 @@ module Scrabble
         return a =~ /[[:alpha:]]/
     end
 
-    #
-    # def self.highest_score_from(array_of_words)
-    #   # returns the word in an array with the highest score
-    #   array_of_scores = []
-    #   array_of _words = array_of_words.each {|word| word.to_s}
-    #   if array_of_words.includes?(nil)
-    #     raise ArgumentError, "This array contains a nil value."
-    #   array_of_words.each |word| do
-    #     array_of_scores.push(word.score)
-    #   end
-    #   @high_scores = array_of_scores.find_all(array_of_scores.max)
-    #   if @high_scores.length
-    #   # better to use fewer tiles
-    #   # 50 pt bonus for using all 7 tiles
-    #   # if multiple words are same, choose first in list
-    # end
 
-    # returns the total score value for the given word.
+    def self.highest_score_from(array_of_words)
+      # returns the word in an array with the highest score
+      scores_hash = {}
+      array_of _words = array_of_words.each {|word| word.to_s!}
+      if array_of_words.includes?(nil)
+        raise ArgumentError, "This array contains a nil value."
+      end
+      array_of_words.each do |word|
+        scores_hash[word.score] = word
+      end
+      @high_scores = {}
+      @high_scores[scores_hash.select {|s, w| w == scores_hash.keys.max}]
+      if @high_scores.length == 1
+        return @high_scores
+      end
+      # better to use fewer tiles
+      # 50 pt bonus for using all 7 tiles
+      # if multiple words are same, choose first in list
+    end
+
+    #returns the total score value for the given word.
     def self.score(word)
       if word == nil
         raise ArgumentError, "You need to write a word" #double check
