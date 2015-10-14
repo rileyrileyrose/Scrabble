@@ -10,4 +10,12 @@ describe Scrabble::Player do
     expect(@player.name).to eq("Ada")
     end
   end
+
+  describe "total_score" do
+    it  "sums up and returns scores" do
+      @player.plays = []
+    end
+
+  end
+
 end

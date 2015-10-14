@@ -1,7 +1,7 @@
 module Scrabble
 
   class Player
-    attr_reader :name
+    attr_accessor :name, :score, :plays
 
     def initialize(name)
       @name = name
