@@ -18,16 +18,16 @@ describe Scrabble::Player do
       expect(@player.score).to eq(9)
     end
 
-    describe "#won?" do
-      context "player has > 100 points" do
-        @player.score = 300
-        expect{@player.won?}.to eq(true)
-      end
-      context "player has < 100 points" do
-        @player.score = 50
-        expect{@player.won?}.to eq(false)
-      end
+  describe "#won?" do
+    it "player has > 100 points" do
+      @player.score = 300
+      expect(@player.won?).to eq(true)
     end
+    it "player has < 100 points" do
+      @player.score = 50
+      expect(@player.won?).to eq(false)
+    end
+  end
 
     describe "#highest_scoring_word"
 
