@@ -54,4 +54,11 @@ describe Scrabble::Player do
     end
   end
 
+  describe "#highest_word_score" do
+    it "returns the score of the highest scoring word" do
+      @player.plays = ["aaa", "bbb", "zzz"]
+      expect(@player.highest_word_score).to eq(30)
+    end
+  end
+
 end
