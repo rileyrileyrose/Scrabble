@@ -4,7 +4,9 @@ module Scrabble
     attr_accessor :tile_bag
 
     def initialize
+
       @tile_bag = creat_tile_bag
+
     end
 
     def creat_tile_bag
@@ -37,9 +39,16 @@ module Scrabble
       1.times { array_tile_bag.push("z")}
       return array_tile_bag
     end
-    
-    def draw_tiles(num)
 
+    def draw_tiles(num)
+      raise ArgumentError if num.class != Integer
+      tiles = []
+      num.times do
+        t = rand(0..(@tile_bag.length - 1))
+        tiles.push(@tile_bag[t])
+        @tile_bag.delete(t)
+      end
+      return tiles
     end
 
   end

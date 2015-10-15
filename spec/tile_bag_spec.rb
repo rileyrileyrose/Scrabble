@@ -12,5 +12,6 @@ describe Scrabble::TileBag do
     it "last letter in the array is Z" do
       expect(@tile_bag.tile_bag.last).to eq("z")
     end
+    
   end
 end
