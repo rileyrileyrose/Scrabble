@@ -11,6 +11,21 @@ describe Scrabble::Player do
     end
   end
 
+  describe "plays" do
+    it "return the words array" do
+    expect(@player.plays).to eq([])
+    end
+  end
+
+  describe "play" do
+    it "Adds the input word to the plays Array" do
+      @player.play("apple")
+      expect(@player.plays).to eq(["apple"])
+    end
+    it "Returns false if player has already won" do
+      @player.won? = true
+      expect(@player.play("apple")).to eq(false)
+
   describe "#total_score" do
     it  "sums up and returns scores" do
       @player.plays = ["aaa", "b", "c"]
