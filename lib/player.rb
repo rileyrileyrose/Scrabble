@@ -42,9 +42,5 @@ module Scrabble
       return Scrabble.highest_score_from(@plays)
     end
 
-    def plays
-      return @plays
-    end
-
   end
 end
