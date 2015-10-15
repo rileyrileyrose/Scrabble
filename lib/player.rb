@@ -3,12 +3,13 @@ require "scrabble_class.rb"
 module Scrabble
 
   class Player
-    attr_accessor :name, :score, :plays
+    attr_accessor :name, :score, :plays, :score_array
 
     def initialize(name)
       @name = name
       @score = 0
       @plays = []
+      @score_array = []
     end
 
     def total_score
@@ -25,6 +26,10 @@ module Scrabble
       else
         return false
       end
+    end
+
+    def highest_scoring_word
+      @plays.
     end
 
   end
