@@ -37,8 +37,6 @@ module Scrabble
       end
     end
 
-  end
-
     def plays
       return @plays
     end

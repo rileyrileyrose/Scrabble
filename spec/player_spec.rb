@@ -23,8 +23,10 @@ describe Scrabble::Player do
       expect(@player.plays).to eq(["apple"])
     end
     it "Returns false if player has already won" do
-      @player.won? = true
+      @player.score = 101
       expect(@player.play("apple")).to eq(false)
+    end
+  end
 
   describe "#total_score" do
     it  "sums up and returns scores" do
