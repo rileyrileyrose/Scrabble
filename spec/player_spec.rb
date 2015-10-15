@@ -1,4 +1,4 @@
-require "./lib/player.rb"
+srequire "./lib/player.rb"
 
 describe Scrabble::Player do
   before :each do
@@ -35,6 +35,7 @@ describe Scrabble::Player do
       expect(@player.score).to eq(9)
     end
   end
+
   describe "#won?" do
     it "player has > 100 points" do
       @player.score = 300
@@ -50,6 +51,17 @@ describe Scrabble::Player do
     it "returns highest scoring word" do
       @player.plays = ["aaa", "bbb", "zzz"]
       expect(@player.highest_scoring_word).to eq("zzz")
+    end
+    it 'returns a string' do
+      @player.plays = ["aaa", "bbb", "zzz"]
+      expect(@player.highest_scoring_word.class).to eq(String)
+    end
+  end
+
+  describe "#highest_word_score" do
+    it "returns the score of the highest scoring word" do
+      @player.plays = ["aaa", "bbb", "zzz"]
+      expect(@player.highest_word_score).to eq(30)
     end
   end
 

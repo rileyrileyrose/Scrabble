@@ -7,6 +7,10 @@ module Scrabble
 
     end
 
+    def draw_tiles(num)
+
+    end
+
   end
 
 end
