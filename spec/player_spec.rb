@@ -17,7 +17,7 @@ describe Scrabble::Player do
       @player.total_score
       expect(@player.score).to eq(9)
     end
-
+  end
   describe "#won?" do
     it "player has > 100 points" do
       @player.score = 300
@@ -29,8 +29,11 @@ describe Scrabble::Player do
     end
   end
 
-    describe "#highest_scoring_word"
-
+  describe "#highest_scoring_word" do
+    it "returns highest scoring word" do
+      @player.plays = ["aaa", "bbb", "zzz"]
+      expect(@player.highest_scoring_word).to eq("zzz")
+    end
   end
 
 end
