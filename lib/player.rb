@@ -39,10 +39,8 @@ module Scrabble
     end
 
     def highest_scoring_word
-      @plays.
+      return Scrabble.highest_score_from(@plays)
     end
-
-  end
 
     def plays
       return @plays
