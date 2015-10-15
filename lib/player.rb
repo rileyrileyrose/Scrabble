@@ -1,13 +1,8 @@
 module Scrabble
 
   class Player
-    def initialize(name)
-      @name = name
-    end
-  end
+    attr_accessor :name, :score, :plays
 
-  class Player
-    attr_reader :name
 
     def initialize(name)
       @name = name
@@ -15,7 +10,17 @@ module Scrabble
       @plays = []
     end
 
-  end
+    def play(word)
+      if won?
+        return false
+      else
+        @plays.push(word)
+      end
+    end
 
->>>>>>> 0dcd281add38dffd174978f00c14a284a2e4586a
+    def plays
+      return @plays
+    end
+    
+  end
 end
