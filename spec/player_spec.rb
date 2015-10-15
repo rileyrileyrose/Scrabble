@@ -1,4 +1,4 @@
-srequire "./lib/player.rb"
+require "./lib/player.rb"
 
 describe Scrabble::Player do
   before :each do
@@ -21,6 +21,10 @@ describe Scrabble::Player do
     it "Adds the input word to the plays Array" do
       @player.play("apple")
       expect(@player.plays).to eq(["apple"])
+    end
+    it "return an empty array when there are no words" do
+      @player.play("")
+      expect(@player.plays).to eq ([""])
     end
     it "Returns false if player has already won" do
       @player.score = 101
