@@ -1,3 +1,5 @@
+require "scrabble_class.rb"
+
 module Scrabble
 
   class Player
@@ -7,6 +9,22 @@ module Scrabble
       @name = name
       @score = 0
       @plays = []
+    end
+
+    def total_score
+      @score = 0
+      @plays.each do |word|
+        @score += Scrabble.score(word)
+      end
+      return @score
+    end
+
+    def won?
+      if @score > 100
+        return true
+      else
+        return false
+      end
     end
 
   end
