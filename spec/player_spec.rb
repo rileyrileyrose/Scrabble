@@ -70,8 +70,19 @@ describe Scrabble::Player do
   end
 
   describe "tiles" do
-    it 'has no words in the beginning od the game' do
-      expect(@player.tiles_array).to eq([])
+    it 'has no words in the beginning of the game' do
+      expect(@player.tiles).to eq([])
+    end
+    it 'It can\'t contain more then 7 words' do
+      array = ["a","b","c","r","g","y","g","h"]
+      expect{@player.draw_tiles(array)}.to raise_error(ArgumentError)
+    end
+  end
+
+  describe "draw_tiles" do
+    it 'fills tiles array until it has 7 letters from the given tile bag' do
+      check_tile_bag = @player.draw_tiles(["a","b"])
+      expect(check_tile_bag).to eq (6)
     end
   end
 

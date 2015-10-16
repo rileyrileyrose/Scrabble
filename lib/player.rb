@@ -1,9 +1,10 @@
 require "scrabble_class.rb"
+require "tile_bag.rb"
 
 module Scrabble
 
   class Player
-    attr_accessor :name, :score, :plays, :score_array, :tiles_array
+    attr_accessor :name, :score, :plays, :score_array, :tiles_array, :tiles
 
 
     def initialize(name)
@@ -11,7 +12,7 @@ module Scrabble
       @score = 0
       @plays = []
       @score_array = []
-      @tiles_array = []
+      @tiles= []
     end
 
 
@@ -47,5 +48,11 @@ module Scrabble
       return Scrabble.score(highest_scoring_word)
     end
 
+    def draw_tiles(tile_bag)
+      raise ArgumentError if (tile_bag.length > 7)
+      num_tiles = 7 - tile_bag.length
+      tile_bag.push(TileBag.draw_tiles(num_tiles))
+      return tile_bag
+    end
   end
 end

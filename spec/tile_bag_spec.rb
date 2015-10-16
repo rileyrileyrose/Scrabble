@@ -15,22 +15,18 @@ describe Scrabble::TileBag do
   end
 
   describe '#draw_tiles(num)' do
-    it 'returns num tiles' do
-      tiles = @tile_bag.draw_tiles(4)
-      expect(tiles.length).to eq(4)
-    end
-    it 'removes the tiles from tile_bag_array' do
-      initial_length = @tile_bag.tile_bag.length
-      @tile_bag.draw_tiles(1)
-      expect(@tile_bag.tile_bag.length).to eq(initial_length - 1)
-    end
+   it 'only accepts numbers' do
+     expect{@tile_bag.draw_tiles("f").to raise_error}
+   end
+   it 'returns num tiles' do
+     tiles = @tile_bag.draw_tiles(4)
+     expect(tiles.length).to eq(4)
+   end
+   it 'removes the tiles from tile_bag_array' do
+     initial_length = @tile_bag.length
+     @tile_bag.draw_tiles(1)
+     expect(@tile_bag.length).to eq(initial_length - 1)
+   end
   end
 
-  describe '#tiles_remaining' do
-    it 'returns number of tiles left in tile bag' do
-      expect(@tile_bag.tiles_remaining).to eq (@tile_bag.tile_bag.length)
-    end
-  end
-
-  end
 end
