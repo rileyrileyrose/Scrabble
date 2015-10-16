@@ -13,6 +13,7 @@ module Scrabble
       @plays = []
       @score_array = []
       @tiles= []
+      @tile_bag = TileBag.new
     end
 
 
@@ -51,8 +52,8 @@ module Scrabble
     def draw_tiles(tile_bag)
       raise ArgumentError if (tile_bag.length > 7)
       num_tiles = 7 - tile_bag.length
-      tile_bag.push(TileBag.draw_tiles(num_tiles))
-      return tile_bag
+      tile_bag.push(@tile_bag.draw_tiles(num_tiles))
+      return tile_bag.flatten!
     end
   end
 end

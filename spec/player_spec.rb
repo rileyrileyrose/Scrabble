@@ -82,7 +82,7 @@ describe Scrabble::Player do
   describe "draw_tiles" do
     it 'fills tiles array until it has 7 letters from the given tile bag' do
       check_tile_bag = @player.draw_tiles(["a","b"])
-      expect(check_tile_bag).to eq (6)
+      expect(check_tile_bag.length).to eq (7)
     end
   end
 
