@@ -1,13 +1,13 @@
 module Scrabble
-
+MAX_LENGTH = 15
   class Board
     attr_accessor :board
 
     def initialize
-      @board = [][]
-      # :horizontal
-      # :vertical
+      @board = []
+      initialize_board
     end
+
 
     def placed_word(word, col, row, direction)
       word.length times do |n|
@@ -31,8 +31,21 @@ module Scrabble
       end
     end
 
-    def horizonal_available? (word, col, row) #boolen method
+    def initialize_board
+      14.times do |row|
+        14.times do |col|
+          @board[row]||= []
+          @board[row].push("*")
+        end
+      end
     end
+
+    #
+    # def horizonal_available? (word, col, row) #boolen method
+    #   count = 0
+    #   15.times do |row| #depends where are you in the matrix
+    #     if @board[col][row]
+    # end
 
     def placed_word_horizontal(word, col, row)
     end
