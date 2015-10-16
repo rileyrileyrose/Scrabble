@@ -5,11 +5,11 @@ module Scrabble
 
    def initialize
 
-     @tile_bag = creat_tile_bag
+     @tile_bag = create_tile_bag
 
    end
 
-   def creat_tile_bag
+   def create_tile_bag
      array_tile_bag = []
      9.times { array_tile_bag.push("a")}
      2.times { array_tile_bag.push("b")}
@@ -41,12 +41,12 @@ module Scrabble
    end
 
    def draw_tiles(num)
-     raise ArgumentError if num.class != Integer
+     #raise ArgumentError if num.class != Integer
      tiles = []
      num.times do
        t = rand(0..(@tile_bag.length - 1))
        tiles.push(@tile_bag[t])
-       @tile_bag.delete(t)
+       @tile_bag.delete_at(t)
      end
      return tiles
    end
