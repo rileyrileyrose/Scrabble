@@ -3,7 +3,7 @@ require "scrabble_class.rb"
 module Scrabble
 
   class Player
-    attr_accessor :name, :score, :plays, :score_array
+    attr_accessor :name, :score, :plays, :score_array, :tiles_array
 
 
     def initialize(name)
