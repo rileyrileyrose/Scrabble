@@ -23,13 +23,10 @@ describe Scrabble::TileBag do
      expect(tiles.length).to eq(4)
    end
    it 'removes the tiles from tile_bag_array' do
-     initial_length = @tile_bag.length
+     initial_length = @tile_bag.tile_bag.length
      @tile_bag.draw_tiles(1)
-     expect(@tile_bag.length).to eq(initial_length - 1)
+     expect(@tile_bag.tile_bag.length).to eq(initial_length - 1)
    end
   end
-<<<<<<< HEAD
 
-=======
->>>>>>> 458e4d9fe1029ff2b4edf6773095e9cb54ba17c0
 end
