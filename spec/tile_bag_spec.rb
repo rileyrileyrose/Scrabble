@@ -28,8 +28,5 @@ describe Scrabble::TileBag do
      expect(@tile_bag.length).to eq(initial_length - 1)
    end
   end
-<<<<<<< HEAD
 
-=======
->>>>>>> 458e4d9fe1029ff2b4edf6773095e9cb54ba17c0
 end
