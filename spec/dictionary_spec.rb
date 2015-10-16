@@ -15,24 +15,25 @@ end
     end
   end
 
-  describe  'includes?()' do
+  describe  'is_valid?' do
     it 'only accepts strings' do
-
+      expect{@dict.is_valid?(9)}.to raise_error ArgumentError
     end
     it 'test whether a given word is in the dictionary' do
-
+      expect(@dict.is_valid?("apple")).to be_truthy
     end
   end
 
   describe 'add_word' do
     it 'adds a word to the dictionary' do
-
+      @dict.add_word("fire")
+      expect(@dict.is_valid?("fire")).to be_truthy
     end
     it 'only accepts strings' do
-
+      expect{@dict.add_word(9)}.to raise_error ArgumentError
     end
     it 'does not add duplicate words' do
-
+      expect{@dict.add_word("apple")}.to raise_error ArgumentError
     end
   end
 
