@@ -27,5 +27,11 @@ describe Scrabble::TileBag do
       @tile_bag.draw_tiles(1)
       expect(@tile_bag.tile_bag.length).to eq(initial_length - 1)
     end
+
+    describe '#tiles_remaining' do
+      it 'returns number of tiles left in tile bag' do
+        expect(@tile_bag.tiles_remaining).to eq (@tile_bag.tile_bag.length)
+      end
+    end
   end
 end
