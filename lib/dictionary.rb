@@ -1,24 +1,15 @@
-module Scrabble
-  class Dictionary
-    attr_accessor :dictionary
 
-    def initialize
-      @dictionary = ["apple", "banana", "cheery", "visceral", "excite", "smile", "face", "tooth", "glitter"]
-    end
+
+module Scrabble
+  class Dictionary_Class
 
     def is_valid?(word)
       raise ArgumentError if word.class != String
-      if @dictionary.include?(word)
-        return true
-      else
-        return false
+      File.open('./lib/dictionary.txt') do |file|
+        file.any? do |line|
+          line.include?(word)
+        end
       end
-    end
-
-    def add_word(word)
-      raise ArgumentError if word.class != String
-      raise ArgumentError if @dictionary.include?(word) == true
-      @dictionary.push(word)
     end
 
   end
