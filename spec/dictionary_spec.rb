@@ -1,16 +1,17 @@
 require "./lib/dictionary.rb"
 
-describe Dictionary do
+describe Scrabble::Dictionary do
 before :each do
   @dict = Scrabble::Dictionary.new
 end
 
   describe 'new' do
     it 'creates a dictionary array' do
-
+      expect(@dict.dictionary).to be_a (Array)
     end
     it 'is an array of all strings' do
-      @dict.dictionary[rand(0..(@dict.dictionary.length - 1)]
+      random = rand(0..(@dict.dictionary.length - 1))
+      expect(@dict.dictionary[random]).to be_a(String)
     end
   end
 
