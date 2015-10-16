@@ -3,9 +3,8 @@ module Scrabble
   class TileBag
 
     def initialize
-      @tile_bag =
 
-    # end
+    end
 
     def draw_tiles(num)
       raise ArgumentError if num.class != Integer
@@ -19,5 +18,4 @@ module Scrabble
     end
 
   end
-
 end
