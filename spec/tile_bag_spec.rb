@@ -11,17 +11,7 @@ describe Scrabble::TileBag do
 
     end
 
-    describe '#draw_tiles(num)' do
-      it 'only accepts numbers' do
-        expect{@tile_bag.draw_tiles("f").to raise_error}
-      end
-      it 'returns num tiles' do
-        tiles = @tile_bag.draw_tiles(4)
-        expect(tiles.length).to eq(4)
-      end
-      it 'removes the tiles from tile_bag_array' do
-
-      end
+  
     end
 
 
