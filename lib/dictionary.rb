@@ -16,7 +16,9 @@ module Scrabble
     end
 
     def add_word(word)
-      
+      raise ArgumentError if word.class != String
+      raise ArgumentError if @dictionary.include?(word) == true
+      @dictionary.push(word)
     end
 
   end
