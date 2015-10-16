@@ -40,7 +40,7 @@ module Scrabble
      return array_tile_bag
    end
 
-   def self.draw_tiles(num)
+   def draw_tiles(num)
      #raise ArgumentError if num.class != Integer
      tiles = []
      num.times do
