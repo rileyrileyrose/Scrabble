@@ -5,7 +5,7 @@ module Scrabble
     def initialize
       @tile_bag =
 
-    end
+    # end
 
     def draw_tiles(num)
       raise ArgumentError if num.class != Integer

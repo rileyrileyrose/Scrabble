@@ -24,7 +24,7 @@ describe Scrabble::Player do
     end
     it "return an empty array when there are no words" do
       @player.play("")
-      expect(@player.plays).to eq ([""])
+      expect(@player.plays  ).to eq ([""])
     end
     it "Returns false if player has already won" do
       @player.score = 101
