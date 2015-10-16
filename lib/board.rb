@@ -40,15 +40,15 @@ MAX_LENGTH = 15
       end
     end
 
-
-    def horizonal_available? (word, col, row) #boolen method
-      count = 0
-      while @board[col][row]!= nil
-        if @board[col][row]!= "*"
-          if @board[col][row] == wo
-            raise ArgumentError, "Out og board limits"
-
-    end
+    #
+    # def horizonal_available? (word, col, row) #boolen method
+    #   count = 0
+    #   while @board[col][row]!= nil
+    #     if @board[col][row]!= "*"
+    #       if @board[col][row] == wo
+    #         raise ArgumentError, "Out og board limits"
+    #
+    # end
 
     def placed_word_horizontal(word, col, row)
     end

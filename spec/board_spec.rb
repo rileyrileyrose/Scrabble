@@ -12,16 +12,16 @@ describe Scrabble::Board do
 
   describe 'initialize board' do
     it "make a matrix with 15 cells with - " do
-    expect(@board.board.length).to eq(14)
+    expect(@board.board.length).to eq(15)
     end
   end
 
-  describe "placed_word" do
-    it "return an Error if you can't place the word in the board" do
-      word = "I_am_more_then_15_letters_string"
-      expect{(@board.placed_word(word)).to be_nil}
-    end
-  end
+  # describe "placed_word" do
+  #   it "return an Error if you can't place the word in the board" do
+  #     word = "I_am_more_then_15_letters_string"
+  #     expect{(@board.placed_word(word)).to be_nil}
+  #   end
+  # end
 
 
   end
