@@ -11,6 +11,7 @@ module Scrabble
       @score = 0
       @plays = []
       @score_array = []
+      @tiles_array = []
     end
 
 

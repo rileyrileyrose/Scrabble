@@ -69,4 +69,10 @@ describe Scrabble::Player do
     end
   end
 
+  describe "tiles" do
+    it 'has no words in the beginning od the game' do
+      expect(player.tiles_array).to eq([])
+    end
+  end
+
 end
