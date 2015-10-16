@@ -31,6 +31,4 @@ describe Scrabble::TileBag do
       expect(@tile_bag.tiles_remaining).to eq (@tile_bag.tile_bag.length)
     end
   end
-
-  end
 end

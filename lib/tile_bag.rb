@@ -51,6 +51,10 @@ module Scrabble
      return tiles
    end
 
+   def tiles_remaining
+     return @tile_bag.length
+   end
+
  end
 
 end
